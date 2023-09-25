@@ -1,0 +1,30 @@
+<%- include('header.ejs') %>
+
+<div class="box">
+	<h1><%= listtitle %></h1>
+</div>
+<div class="box">
+	<% for(let item of newListItems){%>
+	<div class="item">
+		<input type="checkbox" />
+		<p class="checkboxtext"><%= item %></p>
+	</div>
+	<% } %>
+
+	<form
+		class="item"
+		action="/"
+		method="post">
+		<input
+			type="text"
+			name="newItem"
+			placeholder="New Item"
+			autocomplete="off" />
+		<button
+			type="submit"
+			name="list"
+			value="<%= listtitle %>">
+			<i class="fa-solid fa-circle-plus"></i>
+		</button>
+	</form>
+</div>
