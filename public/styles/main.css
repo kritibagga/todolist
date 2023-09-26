@@ -34,18 +34,27 @@ header h1 {
 }
 
 .item {
-	display: flex;
+	display: grid;
+	grid-template-columns: 80% 20%;
 	background-color: white;
 	padding: 1rem;
 	border-bottom: 1px solid #f1f1f1;
 }
 
-.item input {
+.itemList {
+	display: flex;
+}
+
+.item input[type="text"] {
 	margin-right: 1rem;
 	border: none;
 	outline: none;
 	border-bottom: 1px solid purple;
 	padding: 1rem;
+}
+
+.item input[type="checkbox"] {
+	margin-right: 1rem;
 }
 
 .item button {
@@ -59,4 +68,14 @@ header h1 {
 
 .item input:checked ~ .checkboxtext {
 	text-decoration: line-through;
+	text-decoration-color: #b856b8;
+}
+
+.addButton {
+	font-size: 2rem;
+	color: #b856b8;
+}
+
+.closeButton {
+	color: blue;
 }
