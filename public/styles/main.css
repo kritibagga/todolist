@@ -55,6 +55,8 @@ header h1 {
 
 .item input[type="checkbox"] {
 	margin-right: 1rem;
+	accent-color: seagreen;
+    transform: scale(1.5);
 }
 
 .item button {
