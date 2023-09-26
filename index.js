@@ -25,17 +25,6 @@ app.get("/", (req, res) => {
 	});
 });
 
-app.post("/", (req, res) => {
-	const item = req.body.newItem;
-	if (req.body.list === "Work") {
-		workitems.push(item);
-		res.redirect("/work");
-	} else {
-		items.push(item);
-		res.redirect("/");
-	}
-});
-
 app.get("/work", (req, res) => {
 	res.render("partials/list.ejs", {
 		listtitle: "Work List",
@@ -43,10 +32,16 @@ app.get("/work", (req, res) => {
 	});
 });
 
-app.post("/work", (req, res) => {
+app.post("/", (req, res) => {
 	const item = req.body.newItem;
-	workitems.push(item);
-	res.redirect("/work");
+
+	if (req.body.list === "Work List") {
+		workitems.push(item);
+		res.redirect("/work");
+	} else {
+		items.push(item);
+		res.redirect("/");
+	}
 });
 
 app.listen(port, () => {

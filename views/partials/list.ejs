@@ -4,12 +4,22 @@
 	<h1><%= listtitle %></h1>
 </div>
 <div class="box">
-	<% for(let item of newListItems){%>
+	<%if(locals.newListItems){%> <% for(let item of newListItems){%>
 	<div class="item">
-		<input type="checkbox" />
-		<p class="checkboxtext"><%= item %></p>
+		<div class="itemList">
+			<input type="checkbox" />
+			<p class="checkboxtext"><%= item %></p>
+		</div>
+
+		<button
+			type="submit"
+			name="delete"
+			id="deleteButton"
+			value="<%=item%>">
+			<i class="fa-solid fa-xmark closeButton"></i>
+		</button>
 	</div>
-	<% } %>
+	<% } %> <%}%>
 
 	<form
 		class="item"
@@ -24,7 +34,7 @@
 			type="submit"
 			name="list"
 			value="<%= listtitle %>">
-			<i class="fa-solid fa-circle-plus"></i>
+			<i class="fa-solid fa-circle-plus addButton"></i>
 		</button>
 	</form>
 </div>
