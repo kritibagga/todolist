@@ -43,6 +43,7 @@ header h1 {
 
 .itemList {
 	display: flex;
+	align-items: center;
 }
 
 .item input[type="text"] {
@@ -56,7 +57,7 @@ header h1 {
 .item input[type="checkbox"] {
 	margin-right: 1rem;
 	accent-color: seagreen;
-    transform: scale(1.5);
+	transform: scale(1.5);
 }
 
 .item button {
